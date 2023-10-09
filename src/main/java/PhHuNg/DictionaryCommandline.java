@@ -1,3 +1,5 @@
+package PhHuNg;
+
 import java.util.Scanner;
 
 public class DictionaryCommandline {
@@ -107,11 +109,6 @@ public class DictionaryCommandline {
             }
         }
         return;
-    }
-
-    public static void main(String[] args) {
-        DictionaryCommandline dictCommand = new DictionaryCommandline();
-        dictCommand.dictionaryAdvanced();
     }
 
 }

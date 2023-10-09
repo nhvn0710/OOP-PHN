@@ -1,3 +1,5 @@
+package PhHuNg;
+
 public class Word {
     private String wordTarget;
     private String wordExplain;
