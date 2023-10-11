@@ -32,15 +32,13 @@ class QuizQuestion {
         this.answer = answer;
     }
 
-    /*
-     * show word theo dinh dang "wordtarget  | wordexplain".
-     */
+
 }
 
 public class Game {
     private static ArrayList<QuizQuestion> quizQuestions;
 
-    public void setQuizQuestions() {
+    public void importQuizQuestions() {
         quizQuestions = new ArrayList<QuizQuestion>();
         try {
             File inFile = new File("src/main/java/PhHuNg/QuizQuestion.txt");
@@ -60,7 +58,7 @@ public class Game {
         }
     }
 
-    public void printQuizQuestion() {
+    public void makeQuizQuestion() {
         Scanner input0 = new Scanner(System.in);
         Random rand = new Random();
         int n = rand.nextInt(quizQuestions.size());
@@ -78,9 +76,9 @@ public class Game {
     public void gameInitializer() {
         Scanner input0 = new Scanner(System.in);
         String input1 = "Y";
-        setQuizQuestions();
+        importQuizQuestions();
         while (input1.equals("Y") || input1.equals("y")) {
-            printQuizQuestion();
+            makeQuizQuestion();
             System.out.print("Continue? [Y] Yes / [N] No: ");
             input1 = input0.nextLine();
         }

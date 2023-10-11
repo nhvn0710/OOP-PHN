@@ -20,7 +20,7 @@ public class DictionaryManagement {
     }
 
     public void insertFromFile(String path) {
-        dict = new Dictionary();
+        if (dict.getDictionary().isEmpty()) {dict = new Dictionary();}
         try {
             File inFile = new File(path);
             FileReader fileReader = new FileReader(inFile);
@@ -33,6 +33,7 @@ public class DictionaryManagement {
                 dict.addWord(word[0], word[1]);
             }
             dict.sort();
+            dict.removeDuplicates();
             reader.close();
         }
         catch (Exception e) {

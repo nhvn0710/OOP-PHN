@@ -2,9 +2,7 @@ package PhHuNg;
 
 import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class Dictionary {
     private static ArrayList<Word> dictionary;
@@ -157,4 +155,15 @@ public class Dictionary {
         Word removeWord = lookUp(word);
         dictionary.remove(removeWord);
     }
+
+    public void removeDuplicates() {
+        System.out.println(dictionary.size());
+        Set<Word> set = new LinkedHashSet<>(dictionary);
+        dictionary.clear();
+        System.out.println(dictionary.size());
+        dictionary.addAll(set);
+        System.out.println(dictionary.size());
+    }
+
+
 }

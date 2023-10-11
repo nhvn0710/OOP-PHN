@@ -38,4 +38,19 @@ public class Word {
         s += wordExplain;
         return s;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Word)
+        {
+            Word temp = (Word) obj;
+            return this.wordExplain.equals(temp.wordExplain) && this.wordTarget.equals(temp.wordTarget);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return (this.wordTarget.hashCode() + this.wordTarget.hashCode() );
+    }
 }
