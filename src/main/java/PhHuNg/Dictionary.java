@@ -157,12 +157,9 @@ public class Dictionary {
     }
 
     public void removeDuplicates() {
-        System.out.println(dictionary.size());
         Set<Word> set = new LinkedHashSet<>(dictionary);
         dictionary.clear();
-        System.out.println(dictionary.size());
         dictionary.addAll(set);
-        System.out.println(dictionary.size());
     }
 
 

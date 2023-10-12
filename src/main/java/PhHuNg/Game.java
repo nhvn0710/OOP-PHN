@@ -39,7 +39,7 @@ public class Game {
     private static ArrayList<QuizQuestion> quizQuestions;
 
     public void importQuizQuestions() {
-        quizQuestions = new ArrayList<QuizQuestion>();
+        quizQuestions = new ArrayList<>();
         try {
             File inFile = new File("src/main/java/PhHuNg/QuizQuestion.txt");
             FileReader fileReader = new FileReader(inFile);
