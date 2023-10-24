@@ -38,10 +38,10 @@ public class DictionaryCommandline {
         System.out.println("[3] Update");
         System.out.println("[4] Display");
         System.out.println("[5] Lookup");
-        System.out.println("[6] Import from file");
-        System.out.println("[7] Export to file");
-        System.out.println("[8] Search word");
-        System.out.println("[9] Game");
+        System.out.println("[6] Search");
+        System.out.println("[7] Game");
+        System.out.println("[8] Import from file");
+        System.out.println("[9] Export to file");
         System.out.print("Your action: ");
     }
 
@@ -88,38 +88,37 @@ public class DictionaryCommandline {
                     choice = input.nextInt();
                     break;
                 case 6:
+                    System.out.print("Word target: ");
+                    wordTarget = input.nextLine();
+                    dictManager.searchWord(wordTarget);
+                    choice = input.nextInt();
+                    break;
+                case 7:
+                    System.out.println("Clearing screen...");
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    Game gameCommand = new Game();
+                    gameCommand.gameInitializer();
+
+                    choice = input.nextInt();
+                    break;
+                case 8:
                     System.out.print("Path: ");
                     path = input.nextLine();
                     dictManager.insertFromFile(path);
                     System.out.println("Done");
                     choice = input.nextInt();
                     break;
-                case 7:
+                case 9:
                     System.out.print("Path: ");
                     path = input.nextLine();
                     dictManager.dictionaryExportToFile(path);
                     System.out.println("Done");
                     choice = input.nextInt();
                     break;
-                case 8:
-                    System.out.print("Word target: ");
-                    wordTarget = input.nextLine();
-                    dictManager.searchWord(wordTarget);
-                    choice = input.nextInt();
-                    break;
-                case 9:
-                    System.out.println("Clearing screen...");
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
 
-                    Game gameCommand = new Game();
-                    gameCommand.gameInitializer();
-
-                    choice = input.nextInt();
-                    break;
             }
         }
-        return;
     }
 
 }
