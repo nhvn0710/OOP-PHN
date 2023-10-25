@@ -1,48 +1,100 @@
 package PhHuNg;
 
-import java.util.Scanner;
-import java.util.Stack;
+import javafx.util.Pair;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.*;
+import java.io.*;
 
 public class DictionaryManagement {
 
-    public static void main(String[] args) {
-        /**
-         * This is an implementation of a simple text editor from Hackerrank.
-         * The editor initially contains an empty string, S. Perform  operations of the following  types:
-         *
-         * 1 + [string]: append(w) - Append string w to the end of S.
-         * 2 + [int]: delete(k) - Delete the last k characters of S.
-         * 3 + [int]: print(k) - Print the kth character of S.
-         * 4: undo() - Undo the last (not previously undone) operation of type 1 or 2, reverting S to the state it was.
-         */
-        String sw = "";
-        Stack<String> spre = new Stack<>();
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+    private static Dictionary dict;
 
-        for (int i = 0; i < n; i++) {
-            int num = sc.nextInt();
-            switch (num) {
-                case 1 -> {
-                    String a1 = sc.nextLine();
-                    a1 = a1.substring(1);
-                    spre.push(sw);
-                    sw = sw + a1;
-                }
-                case 2 -> {
-                    int a2 = sc.nextInt();
-                    spre.push(sw);
-                    sw = sw.substring(0, sw.length() - a2);
-                }
-                case 3 -> {
-                    int a3 = sc.nextInt();
-                    System.out.println(sw.charAt(a3 - 1));
-                }
-                case 4 -> {
-                    sw = spre.peek();
-                    spre.pop();
-                }
+    public DictionaryManagement() {
+        dict = new Dictionary();
+    }
+
+    public Dictionary getDictionary() {
+        return dict;
+    }
+
+    public void insertFromFile(String path) {
+        if (dict.getDictionary().isEmpty()) {dict = new Dictionary();}
+        try {
+            File inFile = new File(path);
+            FileReader fileReader = new FileReader(inFile);
+
+            BufferedReader reader = new BufferedReader(fileReader);
+            String line = null;
+
+            while ((line = reader.readLine()) != null) {
+                String[] word = line.split("\t");
+                dict.addWord(word[0], word[1]);
             }
+            dict.sort();
+            dict.removeDuplicates();
+            reader.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
+    public void insertFromCommandline() {
+        Scanner input = new Scanner(System.in);
+        int num = input.nextInt();
+        for (int i = 0; i < num; i++) {
+            Scanner str = new Scanner(System.in);
+            String target = str.nextLine();
+            String explain = str.nextLine();
+            dict.addWord(target, explain);
+        }
+        input.close();
+    }
+
+    public void dictionaryLookup(String str) {
+        Word word = dict.lookUp(str);
+        System.out.println(word.getWordTarget() + "  " + word.getWordExplain());
+    }
+
+    public void addWord(String wordTarget, String wordExplain) {
+        dict.addWord(wordTarget, wordExplain);
+    }
+
+    public void editWord(String wordTarget, String wordExplain) {
+        Word newWord = dict.lookUp(wordTarget);
+        newWord.setWordExplain(wordExplain);
+    }
+
+    public void deleteWord(String wordTarget) {
+        dict.delete(wordTarget);
+    }
+
+    public void dictionaryExportToFile(String path) {
+        try {
+            FileWriter fileWriter = new FileWriter(path);
+
+            ArrayList<Word> dictionary = dict.getDictionary();
+
+            for (int i = 0; i < dictionary.size(); i++) {
+                fileWriter.write(dictionary.get(i).getWordTarget() + "\t" + dictionary.get(i).getWordExplain() + "\n");
+            }
+            fileWriter.close();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void searchWord(String word) {
+//        Pair p1 = dict.searchWord(word);
+//        System.out.print(p1.getKey() + "  " + p1.getValue());
+        ArrayList<Word> list = dict.searchWord(word);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(i + 1 + " " + list.get(i).getWordTarget() + " :  " + list.get(i).getWordExplain());
+        }
+    }
+
 }
