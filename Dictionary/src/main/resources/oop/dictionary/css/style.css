@@ -1,0 +1,63 @@
+.white-background {
+    -fx-background-color: #fff;
+}
+
+.transparent {
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.round-layout {
+    -fx-border-radius: 50;
+    -fx-border-color: #D7D7D7;
+}
+
+.selected {
+    -fx-background-color: #F3F3F3;
+}
+
+.mouse-moved:hover {
+    -fx-background-color: #E4E4E4;
+}
+
+.buttongreen {
+    -fx-background-radius: 13px;
+    -fx-background-color: #41e569;
+    -fx-text-fill: #ffffff;
+}
+
+.buttongreen:hover{
+    -fx-background-radius: 13px;
+    -fx-background-color: #31C153;
+    -fx-text-fill: #ffffff;
+}
+
+.buttonblue {
+    -fx-background-radius: 13px;
+    -fx-background-color: #37B5EB;
+    -fx-text-fill: #ffffff;
+}
+
+.buttonblue:hover{
+    -fx-background-radius: 13px;
+    -fx-background-color: #359BC7;
+    -fx-text-fill: #ffffff;
+}
+
+.button-transparent {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.button-transparent:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.button-transparent-focused {
+    -fx-background-color: transparent;
+    -fx-border-color: #1a73e8;
+    -fx-text-fill: #1a73e8;
+}
+
+
+

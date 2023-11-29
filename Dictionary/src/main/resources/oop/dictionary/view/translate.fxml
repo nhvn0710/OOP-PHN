@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.dictionary.controller.TranslateController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="30.0" prefWidth="800.0" />
+            <VBox prefHeight="270.0" prefWidth="800.0">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="800.0">
+                     <children>
+                        <Button fx:id="viSourceButton" mnemonicParsing="false" onAction="#viSourceButtonClick" prefHeight="50.0" prefWidth="130.0" styleClass="button-transparent" stylesheets="@../css/style.css" text="Tiếng Việt">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="enSourceButton" mnemonicParsing="false" onAction="#enSourceButtonClick" prefHeight="50.0" prefWidth="130.0" styleClass="button-transparent" stylesheets="@../css/style.css" text="Tiếng Anh">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <TextArea fx:id="sourceText" prefHeight="220.0" prefWidth="800.0" stylesheets="@../css/style.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font></TextArea>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </VBox>
+            <AnchorPane prefHeight="60.0" prefWidth="800.0">
+               <children>
+                  <Button fx:id="translateButton" alignment="CENTER" contentDisplay="CENTER" layoutX="357.0" layoutY="7.0" mnemonicParsing="false" onAction="#translate" prefHeight="40.0" prefWidth="87.0" styleClass="buttonblue" stylesheets="@../css/style.css" text="Dịch" />
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="270.0" prefWidth="800.0">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="800.0">
+                     <children>
+                        <Button fx:id="viButton" mnemonicParsing="false" onAction="#viButtonClick" prefHeight="50.0" prefWidth="130.0" styleClass="button-transparent" stylesheets="@../css/style.css" text="Tiếng Việt">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="enButton" mnemonicParsing="false" onAction="#enButtonClick" prefHeight="50.0" prefWidth="130.0" styleClass="button-transparent" stylesheets="@../css/style.css" text="Tiếng Anh">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="frButton" mnemonicParsing="false" onAction="#frButtonClick" prefHeight="50.0" prefWidth="130.0" styleClass="button-transparent" stylesheets="@../css/style.css" text="Tiếng Pháp">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="koButton" mnemonicParsing="false" onAction="#koButtonClick" prefHeight="50.0" prefWidth="130.0" styleClass="button-transparent" stylesheets="@../css/style.css" text="Tiếng Hàn">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="zhButton" mnemonicParsing="false" onAction="#zhButtonClick" prefHeight="50.0" prefWidth="130.0" styleClass="button-transparent" stylesheets="@../css/style.css" text="Tiếng Trung">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="targetText" editable="false" prefHeight="219.0" prefWidth="780.0" stylesheets="@../css/style.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font></TextArea>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

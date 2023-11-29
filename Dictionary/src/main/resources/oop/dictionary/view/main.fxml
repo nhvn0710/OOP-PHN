@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="600.0" maxWidth="1000.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.dictionary.controller.MainController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="200.0" styleClass="white-background">
+         <children>
+            <VBox prefHeight="567.0" prefWidth="200.0" styleClass="white-background">
+               <children>
+                  <VBox prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="200.0" styleClass="white-background" stylesheets="@../css/style.css" text="DICTIONARY" textAlignment="CENTER" textFill="#18bfe1">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="500.0" prefWidth="200.0">
+                     <children>
+                        <Separator prefHeight="0.0" prefWidth="121.0" />
+                        <HBox fx:id="searchButton" alignment="CENTER" onMouseClicked="#showSearchPane" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/style.css">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" smooth="false">
+                                 <image>
+                                    <Image url="@../image/dictionary.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: gray;" text="Dictionary">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="translateButton" alignment="CENTER" onMouseClicked="#showTranslatePane" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/style.css">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" smooth="false">
+                                 <image>
+                                    <Image url="@../image/translate.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: gray;" text="Translate">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="gameButton" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/style.css">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" smooth="false">
+                                 <image>
+                                    <Image url="@../image/game.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: gray;" text="Quizz">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <stylesheets>
+                  <URL value="@../css/style.css" />
+                  <URL value="@../css/style.css" />
+               </stylesheets>
+            </VBox>
+         </children>
+         <stylesheets>
+            <URL value="@../css/style.css" />
+            <URL value="@../css/style.css" />
+         </stylesheets>
+      </AnchorPane>
+      <AnchorPane fx:id="mainContent" layoutX="200.0" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <ImageView fitHeight="411.0" fitWidth="617.0" layoutX="21.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/faze.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
