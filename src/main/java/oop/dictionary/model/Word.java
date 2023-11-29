@@ -25,7 +25,10 @@ public class Word {
     }
 
     public String getOnlyExplain() {
-        return wordExplain.split("<br />",2)[1] + "<br />";
+        if (wordExplain.contains("\"<br />\"")) {
+        return wordExplain.split("<br />",2)[1] + "<br />";} else {
+            return wordExplain;
+        }
     }
 
     public String toString() {
