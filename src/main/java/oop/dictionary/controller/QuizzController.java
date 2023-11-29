@@ -63,8 +63,10 @@ public class QuizzController implements Initializable {
 
             while ((line = reader.readLine()) != null) {
                 String[] word = line.split("\t");
-                Question q = new Question(word[0], word[1], word[2], word[3], word[4], word[5], word[6]);
-                questions.add(q);
+                if (word.length > 6) {
+                    Question q = new Question(word[0], word[1], word[2], word[3], word[4], word[5], word[6]);
+                    questions.add(q);
+                }
             }
             Collections.shuffle(questions);
             reader.close();
@@ -139,16 +141,6 @@ class Question {
     private String option4;
     private String answer;
     private String explanation;
-
-    public Question(String question, String option1, String option2, String option3, String option4) {
-        this.question = question;
-        this.option1 = option1;
-        this.option2 = option2;
-        this.option3 = option3;
-        this.option4 = option4;
-        this.answer = option1;
-        this.explanation = "";
-    }
 
     public Question(String question, String option1, String option2, String option3, String option4, String answer, String explanation) {
         this.question = question;
