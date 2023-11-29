@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.dictionary.controller.GuessingGameController">
+   <children>
+      <BorderPane prefHeight="600" prefWidth="800">
+
+         <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+         </padding>
+
+         <top>
+            <Label alignment="TOP_CENTER" prefHeight="40.0" prefWidth="224.0" text="Guess the Word!" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Verdana Bold" size="24.0" />
+               </font>
+            </Label>
+
+         </top>
+
+         <center>
+            <GridPane alignment="CENTER" hgap="10" prefHeight="403.0" prefWidth="760.0" rotate="5.0" vgap="10">
+
+               <Label prefHeight="78.0" prefWidth="131.0" rotate="-16.0" text="Which word is:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </Label>
+
+               <WebView fx:id="targetWordLabel" prefHeight="100.0" prefWidth="600.0" rotate="-5.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+
+               <ProgressIndicator fx:id="correctCountClock" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="60.0" progress="0.0" rotate="-5.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+
+               <VBox fx:id="choicesBox" prefHeight="290.0" prefWidth="598.0" spacing="10" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+
+                  <padding>
+                     <Insets bottom="10" left="10" right="10" />
+                  </padding>
+
+                  <Button fx:id="choice1" onAction="#onChoiceSelected" prefWidth="200.0" rotate="-8.0" styleClass="buttonblue" stylesheets="@../css/style.css">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="300.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="choice2" onAction="#onChoiceSelected" prefHeight="40.0" prefWidth="200.0" styleClass="buttonblue" stylesheets="@../css/style.css">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="choice3" onAction="#onChoiceSelected" prefWidth="200.0" rotate="-16.0" styleClass="buttongreen" stylesheets="@../css/style.css">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="180.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="choice4" onAction="#onChoiceSelected" prefWidth="200.0" rotate="5.0" styleClass="buttongreen" stylesheets="@../css/style.css">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="350.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="choice5" layoutX="20.0" layoutY="239.0" onAction="#onChoiceSelected" prefWidth="200.0" styleClass="buttonblue" stylesheets="@../css/style.css">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+
+               </VBox>
+               <columnConstraints>
+                  <ColumnConstraints maxWidth="194.33333333333331" minWidth="77.33333333333333" prefWidth="152.81310526529947" />
+                  <ColumnConstraints maxWidth="672.5555555555555" minWidth="555.5555555555555" prefWidth="597.4091169569227" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+               <BorderPane.margin>
+                  <Insets right="40.0" />
+               </BorderPane.margin>
+      
+            </GridPane>
+         </center>
+      
+         <bottom>
+            <VBox prefHeight="107.0" prefWidth="760.0" spacing="10" BorderPane.alignment="CENTER">
+      
+               <Label fx:id="guessCountLabel" text="Guesses Left:">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+               </Label>
+      
+               <ProgressBar fx:id="guessesLeftBar" prefHeight="27.0" prefWidth="211.0">
+                  <VBox.margin>
+                     <Insets left="270.0" />
+                  </VBox.margin>
+               </ProgressBar>
+      
+               <Label fx:id="resultLabel" alignment="CENTER" prefWidth="400.0" text="Let's start guessing!" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                  <VBox.margin>
+                     <Insets left="175.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </Label>
+      
+            </VBox>
+         </bottom>
+      
+      </BorderPane>
+   </children>
+</AnchorPane>
