@@ -93,7 +93,6 @@ public class QuizzController implements Initializable {
         Question currentQuestion = questions.get(currentQuestionIndex);
         if (!explanationShown) {
             explanationBox.setText(currentQuestion.getExplanation());
-            System.out.println(currentQuestion.getExplanation());
             explanationShown = true;
             confirmButton.setText("Next");
         } else {
