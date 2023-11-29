@@ -70,8 +70,14 @@ public class DictionaryManagement {
             e.printStackTrace();
         }
     }
-    
-    private void insertFromFile(String path) {
+
+    private void clearData() {
+        dictionaryTrie = new DictionaryTrie();
+        dict.getDictionary().clear();
+    }
+
+    public void insertFromFile(String path) {
+        clearData();
         try {
             File inFile = new File(path);
             FileReader fileReader = new FileReader(inFile);

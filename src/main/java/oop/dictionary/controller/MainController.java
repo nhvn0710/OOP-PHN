@@ -23,7 +23,7 @@ public class MainController implements Initializable {
     @FXML
     private AnchorPane gamePane;
     @FXML
-    private AnchorPane dictionaryPane;
+    private AnchorPane settingPane;
 
     @FXML
     private SearchController searchController;
@@ -43,7 +43,7 @@ public class MainController implements Initializable {
     @FXML
     private HBox gameButton;
     @FXML
-    private HBox dictionaryButton;
+    private HBox settingButton;
 
     private void setMainContent(AnchorPane anchorPane) {
         mainContent.getChildren().setAll(anchorPane);
@@ -52,6 +52,9 @@ public class MainController implements Initializable {
     public void resetStyle() {
         searchButton.getStyleClass().removeAll("selected");
         translateButton.getStyleClass().removeAll("selected");
+        quizzButton.getStyleClass().removeAll("selected");
+        gameButton.getStyleClass().removeAll("selected");
+        settingButton.getStyleClass().removeAll("selected");
     }
 
     @FXML
@@ -80,6 +83,13 @@ public class MainController implements Initializable {
         setMainContent(gamePane);
         resetStyle();
         gameButton.getStyleClass().add("selected");
+    }
+
+    @FXML
+    public void showSettingPane() {
+        setMainContent(settingPane);
+        resetStyle();
+        settingButton.getStyleClass().add("selected");
     }
 
     @Override
@@ -111,6 +121,13 @@ public class MainController implements Initializable {
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("view/game.fxml"));
             gamePane = loader.load();
             gameController = loader.getController();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("view/setting.fxml"));
+            settingPane = loader.load();
         } catch (Exception e) {
             e.printStackTrace();
         }
