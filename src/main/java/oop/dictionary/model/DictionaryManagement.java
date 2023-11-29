@@ -26,7 +26,7 @@ public class DictionaryManagement {
         listWord = dict.getDictionary();
         dictionaryTrie = new DictionaryTrie();
 
-        insertFromFile("file.txt");
+        insertFromFile("DictofWords.txt");
 
 //        connectJDBC = new ConnectJDBC();
 //        insertData();
@@ -110,7 +110,7 @@ public class DictionaryManagement {
 
     public void dictionaryExportToFile() {
         try {
-            FileWriter fileWriter = new FileWriter("file.txt");
+            FileWriter fileWriter = new FileWriter("DictofWords.txt");
 
             ArrayList<Word> dictionary = dict.getDictionary();
 
